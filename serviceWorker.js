@@ -7,7 +7,6 @@
 //   })
 // });
 
-const e = require("express");
 
 self.addEventListener('push', function(event) {
   var options = {

@@ -5,7 +5,7 @@ let vapidKeys = {
   privateVapidKey: "XB9zqtnMc1h9KyopkKoJc0s6ruFkwRTIXSKXXtihSHA",
 };
 
-push.setVapidDetails('mailto:aws.jdelosreyes@gmail.com', publicVapidKey, privateVapidKey)
+push.setVapidDetails('mailto:aws.jdelosreyes@gmail.com', vapidKeys.publicVapidKey, vapidKeys.privateVapidKey)
 
 //List of EndPoints TODO where to store??
 let subscriptions = {};

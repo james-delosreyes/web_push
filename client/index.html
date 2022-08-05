@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test WEB PUSH</title>
+  </head>
+  <body>
+    <h1>Test WEB PUSH</h1>
+    <button onclick="subscribe()">Subscribe</button>
+
+    <script>
+      addEventListener('load', async() => {
+        let register = await navigator.serviceWorker.register('/serviceWorker.js');
+        console.log(register)
+      })
+
+      async function subscribe() { 
+       let serviceWorker = await navigator.serviceWorker.ready;
+       let push = await serviceWorker.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: 'BAwRyF90oTA6Ep2qTkSYuJwrxWTvGwRI2MoNxQTZDx4lE7GFGZ2YJra_Rvfpj6MY3DcFZeAWeU4Y43ngNI-tvVw'
+       });
+       console.log(JSON.stringify(push));
+      }
+    </script>
+  </body>
+</html>
